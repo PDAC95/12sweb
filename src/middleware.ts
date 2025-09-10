@@ -8,7 +8,7 @@ export default async function middleware() {
 
 export const config = {
   matcher: [
-    '/dashboard/:path*',
+    '/feed/:path*',
     '/bets/:path*',
     '/wallet/:path*',
     '/profile/:path*'

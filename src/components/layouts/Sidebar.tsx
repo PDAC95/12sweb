@@ -12,7 +12,7 @@ import {
 import { cn } from '@/lib/utils/cn';
 
 const menuItems = [
-  { href: '/dashboard', label: 'Dashboard', icon: Home },
+  { href: '/feed', label: 'Feed', icon: Home },
   { href: '/bets', label: 'Bets', icon: Trophy },
   { href: '/wallet', label: 'Wallet', icon: Wallet },
   { href: '/friends', label: 'Friends', icon: Users },

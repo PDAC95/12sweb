@@ -57,8 +57,8 @@ export default function LoginPage() {
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
       
-      // For now, just redirect to dashboard
-      router.push('/dashboard');
+      // For now, just redirect to feed
+      router.push('/feed');
     } catch (err) {
       setError('Login failed. Please try again.');
     } finally {
