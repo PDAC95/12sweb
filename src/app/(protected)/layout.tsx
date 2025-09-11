@@ -37,12 +37,12 @@ export default function ProtectedLayout({
       <Header />
       
       {/* Main content */}
-      <main className="flex-1 overflow-y-auto pt-16 pb-20">
+      <main className="flex-1 overflow-y-auto pt-20 pb-24">
         {children}
       </main>
       
       {/* Bottom navigation - shared across protected pages */}
-      <nav className="fixed bottom-0 left-0 right-0 h-20 bg-white border-t border-gray-200 shadow-lg rounded-t-3xl">
+      <nav className="fixed bottom-0 left-0 right-0 h-20 bg-white border-t border-gray-200 shadow-lg rounded-t-3xl z-50">
         <div className="flex justify-around items-center h-full max-w-[430px] mx-auto px-2">
           
           {/* Home */}

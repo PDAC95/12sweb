@@ -23,7 +23,30 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function({ addUtilities }: any) {
+      addUtilities({
+        '.scrollbar-hide': {
+          /* IE and Edge */
+          '-ms-overflow-style': 'none',
+          /* Firefox */
+          'scrollbar-width': 'none',
+          /* Safari and Chrome */
+          '&::-webkit-scrollbar': {
+            display: 'none',
+            width: '0px',
+            background: 'transparent',
+          },
+          '&::-webkit-scrollbar-track': {
+            display: 'none',
+          },
+          '&::-webkit-scrollbar-thumb': {
+            display: 'none',
+          },
+        },
+      });
+    },
+  ],
 };
 
 export default config;

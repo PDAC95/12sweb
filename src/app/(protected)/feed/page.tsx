@@ -1,19 +1,67 @@
 'use client';
 
+import { FeedContainer } from '@/components/feed/FeedContainer';
+import { StoriesSection } from '@/components/feed/StoriesSection';
+
+// Mock data for development
+const mockBets = [
+  {
+    id: '1',
+    user: {
+      name: 'Alex_Pro',
+      avatar: 'https://i.pravatar.cc/150?img=1'
+    },
+    game: 'FIFA 24',
+    description: '1v1 Ultimate Team - Best of 3 matches',
+    amount: 50,
+    timeLeft: '2h',
+    status: 'open' as const,
+    participants: 1,
+    maxParticipants: 2,
+    evidence: null
+  },
+  {
+    id: '2',
+    user: {
+      name: 'GamerGirl_22',
+      avatar: 'https://i.pravatar.cc/150?img=2'
+    },
+    game: 'Call of Duty',
+    description: 'Warzone Duo - 5 kills minimum',
+    amount: 100,
+    timeLeft: '45m',
+    status: 'active' as const,
+    participants: 2,
+    maxParticipants: 2,
+    evidence: 'https://i.pravatar.cc/400?img=10'
+  },
+  {
+    id: '3',
+    user: {
+      name: 'ProPlayer_X',
+      avatar: 'https://i.pravatar.cc/150?img=3'
+    },
+    game: 'Fortnite',
+    description: 'Solo Victory Royale - No building',
+    amount: 25,
+    timeLeft: '1h 30m',
+    status: 'completed' as const,
+    participants: 2,
+    maxParticipants: 2,
+    evidence: null,
+    winner: 'ProPlayer_X'
+  }
+];
+
+
 export default function FeedPage() {
   return (
-    <div className="max-w-[430px] mx-auto w-full">
-      {/* TODO: Add Header component */}
-      {/* TODO: Add Stories section */}
-      {/* TODO: Add Feed cards */}
-      
-      {/* Temporary content */}
-      <div className="flex items-center justify-center h-[calc(100vh-160px)]">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold mb-2">Welcome to Soisi Feed</h1>
-          <p className="text-gray-400">Feed content coming soon</p>
-        </div>
-      </div>
+    <div className="w-full">
+      {/* Stories Section */}
+      <StoriesSection />
+
+      {/* Victory Cards Feed */}
+      <FeedContainer />
     </div>
   );
 }
