@@ -121,11 +121,25 @@ export function VictoryCard({ card, className = '', style }: VictoryCardProps) {
           </div>
         )}
 
+        {/* Comment Bubble */}
+        <div className="absolute bottom-20 left-4 right-16">
+          <div className="relative">
+            {/* Chat bubble with tail */}
+            <div className="bg-gray-200 bg-opacity-60 backdrop-blur-md rounded-2xl rounded-bl-md px-4 py-3 border border-white border-opacity-30">
+              <p className="text-gray-800 text-sm font-medium">
+                ¡Increíble partida! 🔥 Ese último gol fue espectacular
+              </p>
+            </div>
+            {/* Chat bubble tail */}
+            <div className="absolute -bottom-2 left-6 w-0 h-0 border-l-6 border-l-transparent border-r-6 border-r-transparent border-t-8 border-t-gray-200 border-t-opacity-60"></div>
+          </div>
+        </div>
+
         {/* Interaction Bar - Overlaid on Image */}
         <div className="absolute bottom-10 left-3 right-3">
           <div className="flex items-center justify-between">
             {/* Crown - Likes */}
-            <button className="flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-300 hover:bg-white hover:bg-opacity-20 hover:backdrop-blur-md hover:shadow-lg">
+            <button className="flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-300 hover:bg-gray-200 hover:bg-opacity-60 hover:backdrop-blur-md hover:shadow-lg">
               <Image
                 src="https://res.cloudinary.com/dxri4npkx/image/upload/v1757603351/crown_tumzwq.png"
                 alt="Crown"
@@ -137,7 +151,7 @@ export function VictoryCard({ card, className = '', style }: VictoryCardProps) {
             </button>
 
             {/* Comment */}
-            <button className="flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-300 hover:bg-white hover:bg-opacity-20 hover:backdrop-blur-md hover:shadow-lg">
+            <button className="flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-300 hover:bg-gray-200 hover:bg-opacity-60 hover:backdrop-blur-md hover:shadow-lg">
               <Image
                 src="https://res.cloudinary.com/dxri4npkx/image/upload/v1757603405/chatw_t3ar2b.png"
                 alt="Chat"
@@ -149,7 +163,7 @@ export function VictoryCard({ card, className = '', style }: VictoryCardProps) {
             </button>
 
             {/* Play/Challenge */}
-            <button className="flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-300 hover:bg-white hover:bg-opacity-20 hover:backdrop-blur-md hover:shadow-lg">
+            <button className="flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-300 hover:bg-gray-200 hover:bg-opacity-60 hover:backdrop-blur-md hover:shadow-lg">
               <Image
                 src="https://res.cloudinary.com/dxri4npkx/image/upload/v1757603407/playw_wxrt2k.png"
                 alt="Play"
@@ -161,7 +175,7 @@ export function VictoryCard({ card, className = '', style }: VictoryCardProps) {
             </button>
 
             {/* Fire - Streak */}
-            <button className="flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-300 hover:bg-white hover:bg-opacity-20 hover:backdrop-blur-md hover:shadow-lg">
+            <button className="flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-300 hover:bg-gray-200 hover:bg-opacity-60 hover:backdrop-blur-md hover:shadow-lg">
               <Image
                 src="https://res.cloudinary.com/dxri4npkx/image/upload/v1757603351/flame_jehqvn.png"
                 alt="Flame"

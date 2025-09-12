@@ -215,7 +215,7 @@ export default function RegisterPage() {
         email: formData.email,
         username: formData.username,
         password: formData.password,
-        birthDate: formData.birthDate
+        birthDate: formData.dateOfBirth
       });
 
       // Success! Show message and redirect

@@ -32,12 +32,12 @@ export default function ProtectedLayout({
   };
 
   return (
-    <div className="min-h-screen bg-white flex flex-col">
+    <div className="h-full bg-white flex flex-col overflow-hidden">
       {/* Header */}
       <Header />
       
       {/* Main content */}
-      <main className="flex-1 overflow-y-auto pt-20 pb-24">
+      <main className="flex-1 overflow-y-auto scrollbar-hide pt-20 pb-24">
         {children}
       </main>
       

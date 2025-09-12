@@ -126,7 +126,7 @@ export function FeedContainer({ cards = defaultCards }: FeedContainerProps) {
   return (
     <div className="w-full">
       {/* Victory Cards with Stack Effect */}
-      <div className="bg-gray-50 pb-24 pt-5 px-4">
+      <div className="bg-gray-50 pb-24 pt-5">
         <div className="space-y-0">
           {cards.map((card, index) => (
             <VictoryCard
