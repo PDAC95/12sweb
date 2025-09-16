@@ -1,12 +1,15 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useAuth } from '../../../contexts/AuthContext';
 
 export default function LoginPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const { login } = useAuth();
   
   // Form state
   const [email, setEmail] = useState('');
@@ -51,16 +54,21 @@ export default function LoginPage() {
     }
 
     setIsLoading(true);
-    
-    // TODO: Implement actual login logic with Auth0
+
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // For now, just redirect to feed
-      router.push('/feed');
+      const success = await login(email, password);
+
+      if (success) {
+        // Get redirect URL from search params or default to feed
+        const redirectTo = searchParams.get('redirect') || '/feed';
+        router.push(redirectTo);
+      }
     } catch (err) {
-      setError('Login failed. Please try again.');
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError('Login failed. Please try again.');
+      }
     } finally {
       setIsLoading(false);
     }

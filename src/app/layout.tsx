@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { Auth0Provider } from '@auth0/nextjs-auth0';
+import { AuthProvider } from '../contexts/AuthContext';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -24,9 +24,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body className={`${inter.className} h-full overflow-hidden`}>
-        <Auth0Provider>
+        <AuthProvider>
           {children}
-        </Auth0Provider>
+        </AuthProvider>
       </body>
     </html>
   );
